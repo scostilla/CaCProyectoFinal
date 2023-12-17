@@ -50,7 +50,6 @@ public class MysqlRepositoryImpl implements IPersistence {
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
-                int id = result.getInt("id");
                 String nombre = result.getString("nombre");
                 String apellido = result.getString("apellido");
                 String tema = result.getString("tema");

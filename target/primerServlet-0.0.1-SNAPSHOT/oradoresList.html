@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Integrador SCostilla</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+    <!-- <script src="./resources/css/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script> -->
+
+    <script type="importmap">
+            {
+              "imports": {
+                "@popperjs/core": "./resources/css/popper.min.js",
+                "bootstrap": "./resources/css/bootstrap.esm.min.js"
+              }
+            }
+            </script>
+    <!-- 
+    <script src="./resources/css/bootstrap.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script> -->
+
+    <script src="./resources/css/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link href="./resources/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav id="head">
+                <div class="row">
+                    <div class="col-xl-2 offset-xl-1">
+                        <a class="nav-link" href="./index.html">
+                            <img src="./resources/images/codoacodo.png" alt="logoCodoaCodo" id="logoCodoacodo">
+                            <span id="conf">Conf Bs As</span>
+                        </a>
+                    </div>
+                    <div class="col-xl-7 offset-xl-2">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#conferencia">La conferencia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#oradores">Los oradores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#lugar">El lugar y la Fecha</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#serOrador">Convertite en orador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./buyTickets.html">Comprar Tickets</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div id="oradores">
+                <div class="oradoresTitle">
+                  <h6>LISTADO DE </h6>
+                  <h2>ORADORES INSCRIPTOS</h2>
+                </div>
+              </div>
+              <div class="row justify-content-center col-md-8 offset-md-2">
+              <P></P>
+            <table id="tablaOradores" class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Tema</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyOradores">
+                    <!-- Las filas de la tabla se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+        </main>
+        <br>
+        <footer>
+            <nav id="footer">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <ul class="nav d-flex">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Preguntas Frecuentes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contáctanos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Prensa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Conferencias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Términos y Condiciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Privacidad</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Estudiantes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">.:: Sebastian R. Costilla - JAVA-FRONT END 2023 ::.</div>
+            </nav>
+        </footer>
+    </div>
+    <script src="./resources/js/oradores.js"></script>
+</body>
+
+</html>

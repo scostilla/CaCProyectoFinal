@@ -1,0 +1,227 @@
+#head {
+  background-color: #343b40;
+}
+
+.nav {
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+
+.btnBlur {
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+}
+
+#logoCodoacodo {
+  width: 50%;
+}
+#conf {
+  color: azure;
+  font-size: 120%;
+}
+
+.btnBlur {
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+}
+
+.nav-link:link {
+  color: #ffffff;
+}
+
+.nav-link:visited {
+  color: #d66c6c;
+}
+
+.nav-link:hover {
+  color: rgb(123, 126, 151);
+}
+
+.nav-link:active {
+  color: rgb(14, 77, 45);
+}
+
+.carousel {
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.carousel img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.row.carousel {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  height: 100%;
+  padding: 20px;
+  color: white;
+  z-index: 1;
+  text-align: right;
+}
+
+.title p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.title button {
+  margin-right: 10px;
+}
+
+.oradoresTitle {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.oradoresTitle h6 {
+  display: block;
+  margin-bottom: 1px;
+  font-weight: 400;
+}
+
+.oradoresTitle h2 {
+  display: block;
+}
+
+#carouselControls {
+  position: relative;
+  z-index: 0;
+}
+
+.card {
+  margin: 1%;
+  border-radius: 0;
+  padding: 0%;
+}
+
+.oradorImg {
+  width: 100%;
+  height: 100%;
+}
+
+.detail {
+  padding: 5%;
+}
+
+.place {
+  background-color: #343b40;
+  color: azure;
+  padding: 1%;
+}
+.description {
+  padding: 3%;
+}
+
+.moreButton {
+  padding-top: 3%;
+  padding-left: 0%;
+}
+
+#lugar .col-md-6 {
+  padding: 0;
+}
+
+.dotted {
+  border-bottom: 3px dotted #000;
+}
+
+.textArea {
+  margin-top: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.sendButton {
+  background-color: #7db167;
+  border: 0;
+  height: 130%;
+  font-size: 130%;
+}
+
+#serOrador {
+  margin-bottom: 2%;
+}
+
+#footer {
+  background: linear-gradient(90deg, #283747, #2471a3);
+  margin-bottom: 1%;
+}
+
+#footer .nav-link {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+#footer ul {
+  margin-top: 8px;
+  padding-bottom: 0px;
+  font-size: small;
+}
+
+.copyright {
+  text-align: center;
+  font-size: x-small;
+  color: azure;
+  padding-bottom: 5px;
+}
+
+.student, .trainee, .junior{
+  border-style: solid;
+  margin: 4px;
+  border-width: 2px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.student h5, .student h6,.trainee h5, .trainee h6,.junior h5, .junior h6 {
+  margin: 0;
+  line-height: 2.5;
+}
+
+.student{
+  border-color: blue;
+}
+
+
+
+.trainee{
+  border-color: green;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.junior{
+  border-color: orange;
+}
+
+.formbtn{
+  height: 45px;
+  background-color: #97c93f;
+  border-color: #97c93f;
+}
+
+.btnDelete{
+  margin-right: 4px;
+}
+
+.btnResume{
+  margin-left: 8px;
+}
+
+.alert-primary {
+  color: rgb(59, 59, 168);
+}

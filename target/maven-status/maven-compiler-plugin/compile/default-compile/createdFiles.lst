@@ -1,0 +1,7 @@
+infraestructure\persistence\mysql\MysqlRepositoryImpl.class
+servlets\PrimerServlet.class
+infraestructure\persistence\IPersistence.class
+models\Orador.class
+mappers\OradorMapper.class
+infraestructure\persistence\mysql\ConexionDB.class
+models\Tickets.class

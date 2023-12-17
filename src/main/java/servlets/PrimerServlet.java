@@ -19,7 +19,6 @@ public class PrimerServlet extends HttpServlet {
 	OradorMapper mapper = new OradorMapper();
 
 	public PrimerServlet() {
-		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,6 +37,7 @@ public class PrimerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		System.out.println("DoPost entra......");
 		String nombre = request.getParameter("nombreInput");
 		String apellido = request.getParameter("apellidoInput");
 		String tema = request.getParameter("temaInput");
@@ -48,12 +48,12 @@ public class PrimerServlet extends HttpServlet {
 
 		System.out.println("nombre y apellido ingresado: " + nombre + " " + apellido + " - Tema: " + tema);
 
-		String oradorJsonFake = String.format(
+		// String oradorJsonFake = String.format(
 
-				"{\"id\": \"%s\", \"nombre\": \"%s\"  }",
-				orador.getId(), orador.getNombre()
+		// "{\"id\": \"%s\", \"nombre\": \"%s\" }",
+		// orador.getId(), orador.getNombre()
 
-		);
+		// );
 
 		OradorMapper mapper = new OradorMapper();
 
@@ -62,7 +62,7 @@ public class PrimerServlet extends HttpServlet {
 		response.getWriter().write(oradorJson);
 		// response.getWriter().write("nombre y apellido ingresado: "+nombre+"
 		// "+apellido+" creado correctamente");
-		response.sendRedirect("confirmacion.html");
+		// response.sendRedirect("confirmacion.html");
 
 	}
 
