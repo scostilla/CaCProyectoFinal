@@ -8,7 +8,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>PrimerServlet</servlet-name>
-    <url-pattern>confirmacion</url-pattern>
+    <url-pattern>/confirmacion</url-pattern>
   </servlet-mapping>
   <display-name>primerServlet</display-name>
   <welcome-file-list>

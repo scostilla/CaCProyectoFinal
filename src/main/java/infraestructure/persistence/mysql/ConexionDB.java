@@ -9,8 +9,8 @@ public class ConexionDB {
     public static Connection getConnection() {
         String host = "localhost";
         String port = "3306";
-        String username = "root";
-        String password = "root";
+        String username = "sa";
+        String password = "Sa123456.";
         String nombredb = "integrador_cac";
 
         String driverClassName = "com.mysql.cj.jdbc.Driver";
