@@ -11,6 +11,7 @@ public class OradorMapper {
     ObjectMapper mapper;
 
     public OradorMapper() {
+        this.mapper = new ObjectMapper();
     }
 
     public OradorMapper(ObjectMapper mapper) {

@@ -14,7 +14,7 @@ public class MysqlRepositoryImpl implements IPersistence {
     private Connection connection;
 
     public MysqlRepositoryImpl() {
-        this.connection = connection;
+        this.connection = ConexionDB.getConnection();
     }
 
     @Override

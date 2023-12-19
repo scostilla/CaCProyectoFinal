@@ -60,9 +60,8 @@ public class PrimerServlet extends HttpServlet {
 		String oradorJson = mapper.toJson(orador);
 
 		response.getWriter().write(oradorJson);
-		// response.getWriter().write("nombre y apellido ingresado: "+nombre+"
-		// "+apellido+" creado correctamente");
-		// response.sendRedirect("confirmacion.html");
+		 response.getWriter().write("nombre y apellido ingresado: "+nombre+" "+apellido+" creado correctamente");
+		 response.sendRedirect("confirmacion.html");
 
 	}
 
