@@ -14,6 +14,7 @@ public class MysqlRepositoryImpl implements IPersistence {
     private Connection connection;
 
     public MysqlRepositoryImpl() {
+        System.err.println("******************************MysqlRepositoryImpl******************************");
         this.connection = ConexionDB.getConnection();
     }
 
@@ -43,7 +44,7 @@ public class MysqlRepositoryImpl implements IPersistence {
 
         ArrayList<Orador> oradores = new ArrayList<>();
 
-        String query = "SELECT * FROM Oradores";
+        String query = "SELECT * FROM oradores";
 
         try {
             PreparedStatement statement = connection.prepareStatement(query);

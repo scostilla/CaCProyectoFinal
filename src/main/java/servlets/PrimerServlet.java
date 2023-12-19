@@ -13,16 +13,19 @@ import infraestructure.persistence.mysql.MysqlRepositoryImpl;
 import mappers.OradorMapper;
 import models.Orador;
 
+//@WebServlet(urlPatterns = "/endpoint")
 public class PrimerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	IPersistence sistemaPersistencia = new MysqlRepositoryImpl();
 	OradorMapper mapper = new OradorMapper();
 
 	public PrimerServlet() {
+		System.err.println("******************************PrimerServlet******************************");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.err.println("******************************doGet******************************");
 
 		ArrayList<Orador> oradores = sistemaPersistencia.getAll();
 
@@ -37,7 +40,7 @@ public class PrimerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("DoPost entra......");
+		System.err.println("******************************doPost******************************");
 		String nombre = request.getParameter("nombreInput");
 		String apellido = request.getParameter("apellidoInput");
 		String tema = request.getParameter("temaInput");
@@ -60,8 +63,8 @@ public class PrimerServlet extends HttpServlet {
 		String oradorJson = mapper.toJson(orador);
 
 		response.getWriter().write(oradorJson);
-		 response.getWriter().write("nombre y apellido ingresado: "+nombre+" "+apellido+" creado correctamente");
-		 response.sendRedirect("confirmacion.html");
+		response.getWriter().write("nombre y apellido ingresado: " + nombre + " " + apellido + " creado correctamente");
+		response.sendRedirect("primerServlet/oradoresList.html");
 
 	}
 

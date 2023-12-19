@@ -9,7 +9,7 @@ public class ConexionDB {
     public static Connection getConnection() {
         String host = "localhost";
         String port = "3306";
-        String username = "sa";
+        String username = "root";
         String password = "Sa123456.";
         String nombredb = "integrador_cac";
 
