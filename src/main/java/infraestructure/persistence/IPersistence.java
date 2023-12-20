@@ -12,5 +12,7 @@ public interface IPersistence {
 
     ArrayList<Orador> getAll();
 
+    Orador update(Orador datosParaActualizar);
+
     void deleteOradorbyId(int id);
 }

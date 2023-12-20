@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,14 +14,13 @@ import infraestructure.persistence.mysql.MysqlRepositoryImpl;
 import mappers.OradorMapper;
 import models.Orador;
 
-//@WebServlet(urlPatterns = "/endpoint")
+@WebServlet(urlPatterns = "/endpoint")
 public class PrimerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	IPersistence sistemaPersistencia = new MysqlRepositoryImpl();
 	OradorMapper mapper = new OradorMapper();
 
 	public PrimerServlet() {
-		System.err.println("******************************PrimerServlet******************************");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,26 +45,24 @@ public class PrimerServlet extends HttpServlet {
 		String apellido = request.getParameter("apellidoInput");
 		String tema = request.getParameter("temaInput");
 
+		System.out.println("nombre y apellido ingresado: " + nombre + " " + apellido + " - Tema: " + tema);
+
 		Orador orador = new Orador(nombre, apellido, tema);
 
 		sistemaPersistencia.guardarOrador(orador);
 
-		System.out.println("nombre y apellido ingresado: " + nombre + " " + apellido + " - Tema: " + tema);
+		String oradorJsonFake = String.format(
 
-		// String oradorJsonFake = String.format(
+				"{\"id\": \"%s\", \"nombre\": \"%s\"  }",
+				orador.getId(), orador.getNombre()
 
-		// "{\"id\": \"%s\", \"nombre\": \"%s\" }",
-		// orador.getId(), orador.getNombre()
-
-		// );
+		);
 
 		OradorMapper mapper = new OradorMapper();
 
 		String oradorJson = mapper.toJson(orador);
 
 		response.getWriter().write(oradorJson);
-		response.getWriter().write("nombre y apellido ingresado: " + nombre + " " + apellido + " creado correctamente");
-		response.sendRedirect("primerServlet/oradoresList.html");
 
 	}
 

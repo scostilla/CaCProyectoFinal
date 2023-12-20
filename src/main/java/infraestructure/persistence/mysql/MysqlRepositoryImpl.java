@@ -29,14 +29,16 @@ public class MysqlRepositoryImpl implements IPersistence {
             statement.setString(3, orador.getTema());
 
             statement.execute();
+
         } catch (SQLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
     @Override
     public Orador getOradorById(int id) {
-        throw new UnsupportedOperationException("Unimplemented method 'getOradorById'");
+        return null;
     }
 
     @Override
@@ -60,6 +62,7 @@ public class MysqlRepositoryImpl implements IPersistence {
             }
 
         } catch (SQLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -67,8 +70,14 @@ public class MysqlRepositoryImpl implements IPersistence {
     }
 
     @Override
+    public Orador update(Orador datosParaActualizar) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
     public void deleteOradorbyId(int id) {
-        throw new UnsupportedOperationException("Unimplemented method 'deleteOradorbyId'");
+        // TODO Auto-generated method stub
     }
 
 }

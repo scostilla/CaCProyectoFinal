@@ -168,18 +168,18 @@
           Anótate como orador para dar una <span class="dotted">charla ignite</span>. Cuéntanos de qué quieres hablar!
         </div>
 
-        <form role="form" action="/primerServlet/oradoresList.html" method="post">
+        <form role="form" action="endpoint" method="post">
         <div class="row justify-content-center">
           <div class="col-md-3">
-            <input type="text" class="form-control" id="firstName" placeholder="Nombre" name="nombreInput">
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombreInput">
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" id="lastName" placeholder="Apellido" name="apellidoInput">
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="apellidoInput">
           </div>
 
           <div class="row justify-content-center textArea">
             <div class="col-md-6">
-              <textarea class="form-control" placeholder="Sobre qué quieres hablar?" id="textArea"
+              <textarea class="form-control" placeholder="Sobre qué quieres hablar?" id="tema"
                 style="height: 100px" name="temaInput"></textarea>
               <label for="textArea">
                 Recuerda incluir un titulo para tu charla
@@ -189,7 +189,7 @@
           </div>
           <div class="col-md-6">
             <div class="d-grid gap-2">
-              <button class="btn btn-success sendButton" type="submit">Enviar</button>
+              <button class="btn btn-success sendButton" type="submit" onclick="sendData(event)">Enviar</button>
             </div>
           </div>
         </div>

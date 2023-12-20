@@ -7,10 +7,11 @@ import java.sql.SQLException;
 public class ConexionDB {
 
     public static Connection getConnection() {
+
         String host = "localhost";
         String port = "3306";
         String username = "root";
-        String password = "Sa123456.";
+        String password = "root";
         String nombredb = "integrador_cac";
 
         String driverClassName = "com.mysql.cj.jdbc.Driver";
@@ -19,13 +20,17 @@ public class ConexionDB {
 
         try {
             Class.forName(driverClassName);
+            System.err.println("******************************connection******************************");
             String url = "jdbc:mysql://" + host + ":" + port + "/" + nombredb;
 
             connection = DriverManager.getConnection(url, username, password);
-            System.err.println("Conexion establecida");
+            System.out.println("CONEXION ESTABLECIDA ...");
         } catch (ClassNotFoundException | SQLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
         return connection;
+
     }
 }

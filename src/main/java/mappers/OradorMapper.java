@@ -14,10 +14,6 @@ public class OradorMapper {
         this.mapper = new ObjectMapper();
     }
 
-    public OradorMapper(ObjectMapper mapper) {
-        this.mapper = mapper;
-    }
-
     public String toJson(Orador orador) {
         try {
             return mapper.writeValueAsString(orador);

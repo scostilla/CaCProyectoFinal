@@ -3,12 +3,31 @@ totalElement.style.display = "none";
 
 function clearForm() {
   console.log("borrar todo");
-  document.getElementById("firstName").value = "";
-  document.getElementById("lastName").value = "";
-  document.getElementById("mail").value = "";
-  document.getElementById("inputQuantity").value = "";
-  document.getElementById("inputCategory").selectedIndex = 0;
+  document.getElementById("nombre").value = "";
+  document.getElementById("apellido").value = "";
+  document.getElementById("tema").value = "";
   totalElement.style.display = "none";
+}
+
+function sendData() {
+  event.preventDefault();
+
+  const nombre = document.getElementById('nombre').value;
+  const apellido = document.getElementById('apellido').value;
+  const tema = document.getElementById('tema').value;
+
+  fetch(`endpoint?nombreInput=${nombre}&apellidoInput=${apellido}&temaInput=${tema}`, {
+    method: 'POST'
+  })
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(data => renderizarCard([data]))
+    .catch(error => console.error('Error:', error));
+
+  // Limpia los campos después de enviar los datos
+  clearForm();
 }
 
 function calculateTotal() {
@@ -26,19 +45,19 @@ function calculateTotal() {
   let subTotal = 200 * quantity;
   const selectElement = document.getElementById("inputCategory").value;
 
-    switch (selectElement) {
-      case "student":
-        totalToPay = subTotal * 0.2;
-        break;
-      case "trainee":
-        totalToPay = subTotal * 0.5;
-        break;
-      case "junior":
-        totalToPay = subTotal * 0.85;
-        break;
-      default:
-        totalToPay = subTotal;
-    }
+  switch (selectElement) {
+    case "student":
+      totalToPay = subTotal * 0.2;
+      break;
+    case "trainee":
+      totalToPay = subTotal * 0.5;
+      break;
+    case "junior":
+      totalToPay = subTotal * 0.85;
+      break;
+    default:
+      totalToPay = subTotal;
+  }
   totalElement.style.display = "block";
   document.getElementById("total").textContent = "Total a pagar: $" + totalToPay;
 
