@@ -35,8 +35,8 @@ function sendData() {
       return response.json();
     })
     .then(data => {
-      renderizarCard([data]);
-      window.location.href = './oradoresList.html';
+      //renderizarCard([data]);
+      //window.location.href = './oradoresList.html';
     })
     .catch(error => console.error('Error:', error));
 
@@ -74,7 +74,7 @@ function renderizarCard(data) {
     card.style.maxWidth = "18rem";
 
     card.innerHTML =
-      `<div class="card-header">Usuario guardado</div>
+      `<div class="card-header">Orador guardado</div>
                 <div class="card-body">
       <h5 class="card-title">${element.nombre} ${element.apellido}</h5>
       <p class="card-text">tema: ${element.tema}</p>

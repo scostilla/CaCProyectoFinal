@@ -196,9 +196,41 @@
       </form>
 
       </div>
-      <div class="col-md-8 d-flex" id="historial">
+    </div>
+    <div class="col-md-8 d-flex" id="historial">
 
-			</div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="container col-8 justify-content-center">
+      <h3>
+        TODOS LOS ORADORES REGISTRADOS
+      </h3>
+      <button type="submit" class="btn btn-primary" onclick="listarOradores()">
+        Submit
+      </button>
+      <table id="tablaDatos" class="table">
+        <thead>
+          <tr>
+              <th>
+                  TEMA
+              </th>
+              <th>
+                  NOMBRE
+              </th>
+              <th>
+                  APELLIDO
+              </th>
+
+          </tr>
+      </thead>
+        <tbody id="cuerpoTabla">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
     </main>
     <footer>
       <nav id="footer">
