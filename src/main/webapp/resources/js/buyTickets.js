@@ -9,6 +9,17 @@ function clearForm() {
   totalElement.style.display = "none";
 }
 
+function listarOradores() {
+			
+  fetch('endpoint', {
+    method: "GET"
+  })
+    .then(response => response.json())
+    .then(data => renderizarTabla(data))
+    .catch(error => console.log("Error al traer los oradores ..." + error))
+
+}
+
 function sendData() {
   event.preventDefault();
 
@@ -23,23 +34,39 @@ function sendData() {
       console.log(response);
       return response.json();
     })
-    .then(data => renderizarCard([data]))
+    .then(data => {
+      renderizarCard([data]);
+      window.location.href = './oradoresList.html';
+    })
     .catch(error => console.error('Error:', error));
 
-  // Limpia los campos después de enviar los datos
   clearForm();
 }
 
 
 
+function renderizarTabla(data) {
+  const tabla = document.getElementById('cuerpoTabla');
+  tabla.innerHTML = '';
+  console.log(data)
+  data.forEach(element => {
+    console.log(element);
+    const fila = document.createElement('tr');
+    fila.innerHTML = `<td>${element.tema}</td>
+                    <td>${element.nombre}</td>
+                    <td>${element.apellido}</td>`;
+    tabla.appendChild(fila);
+  });
+}
 
 function renderizarCard(data) {
+  
   const cardContainer = document.getElementById('historial');
   const cards = cardContainer.getElementsByClassName('card');
 
-  // if (cards.length >= 3) {
-  //   cardContainer.removeChild(cards[0]); // Elimina la card mas antigua si hay tres o más
-  // }
+  if (cards.length >= 3) {
+    cardContainer.removeChild(cards[0]); // Elimina la card mas antigua si hay tres o más
+  }
 
   data.forEach(element => {
     const card = document.createElement('div');
@@ -50,45 +77,18 @@ function renderizarCard(data) {
       `<div class="card-header">Usuario guardado</div>
                 <div class="card-body">
       <h5 class="card-title">${element.nombre} ${element.apellido}</h5>
-      <p class="card-text">Tema: ${element.tema}</p>
+      <p class="card-text">tema: ${element.tema}</p>
     </div>`;
 
     cardContainer.appendChild(card);
   });
 }
 
-
-
-
-
-
-
-
-
-
-
-function listarUsuarios() {
-			
-
-  fetch('endpoint', {
-    method: "GET"
-  })
-    .then(response => response.json())
-    .then(data => renderizarTabla(data))
-    .catch(error => console.log("Error al traer los oradores ..." + error))
-
-}
-
-
-
-
-
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.location.pathname.includes("oradoresList.html")) {
+    listarOradores();
+  }
+});
 
 
 function calculateTotal() {
@@ -135,5 +135,3 @@ function calculateTotal() {
       inputCategory
   );
 }
-
-console.log("entra");
