@@ -30,6 +30,67 @@ function sendData() {
   clearForm();
 }
 
+
+
+
+function renderizarCard(data) {
+  const cardContainer = document.getElementById('historial');
+  const cards = cardContainer.getElementsByClassName('card');
+
+  // if (cards.length >= 3) {
+  //   cardContainer.removeChild(cards[0]); // Elimina la card mas antigua si hay tres o más
+  // }
+
+  data.forEach(element => {
+    const card = document.createElement('div');
+    card.classList.add("card", "text-white", "bg-success", "mb-3", "mr-1");
+    card.style.maxWidth = "18rem";
+
+    card.innerHTML =
+      `<div class="card-header">Usuario guardado</div>
+                <div class="card-body">
+      <h5 class="card-title">${element.nombre} ${element.apellido}</h5>
+      <p class="card-text">Tema: ${element.tema}</p>
+    </div>`;
+
+    cardContainer.appendChild(card);
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+function listarUsuarios() {
+			
+
+  fetch('endpoint', {
+    method: "GET"
+  })
+    .then(response => response.json())
+    .then(data => renderizarTabla(data))
+    .catch(error => console.log("Error al traer los oradores ..." + error))
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 function calculateTotal() {
   console.log("calcular");
   const totalElement = document.getElementById("total");

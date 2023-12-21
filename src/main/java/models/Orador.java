@@ -1,7 +1,7 @@
 package models;
 
 public class Orador {
-    private int id;
+    private int id_orador;
     private String nombre;
     private String apellido;
     private String tema;
@@ -16,11 +16,11 @@ public class Orador {
     }
 
     public int getId() {
-        return id;
+        return id_orador;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_orador) {
+        this.id_orador = id_orador;
     }
 
     public String getNombre() {
